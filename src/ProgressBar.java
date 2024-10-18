@@ -5,15 +5,26 @@ public class ProgressBar {
 
         while (length <= 100)
         {
-            barLongLength(length / 8);
-            barSmallLength(length % 8);
+            barLength(length);
             System.out.print(" %" + length + "\n");
             length++;
         }
     }
 
-    public static void barSmallLength(int charLength)
+    public static void barLength(int charLength)
     {
+        int saveCharLength = charLength;
+
+        saveCharLength /= 8;
+
+        while (saveCharLength > 0)
+        {
+            System.out.print("█");
+            saveCharLength--;
+        }
+
+        charLength %= 8;
+
         switch (charLength)
         {
             case 0:
@@ -43,15 +54,6 @@ public class ProgressBar {
             case 8:
                 System.out.print("█");
                 break;
-        }
-    }
-
-    public static void barLongLength(int charLength)
-    {
-        while (charLength > 0)
-        {
-            System.out.print("█");
-            charLength--;
         }
     }
 }
