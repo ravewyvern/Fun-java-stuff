@@ -1,9 +1,9 @@
 public class ProgressBar {
 
-    public static void runBar(int length)
+    public static void runBar(int length, int maxLength)
     {
 
-        while (length <= 100)
+        while (length <= maxLength)
         {
             barLength(length);
             System.out.print(" %" + length + "\n");
