@@ -1,13 +1,3 @@
-/**
-* This class provides several useful static methods and is part of the CS111 course material
-* MiraCosta College 2020
-*
-* @author Nery Chapeton-Lamas <nery@miracosta.edu>
-* @author Gabriel Siguenza <gebsiguenza@gmail.com>
-*
-* @version 1.2
-*/
-
 import java.util.Scanner;
 
 public class UtilityBelt
