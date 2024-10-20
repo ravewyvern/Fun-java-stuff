@@ -39,7 +39,7 @@ public class Main {
                 break;
             case 3:
                 System.out.println("Java Terminal");
-                System.out.println("Copyright (C) Katelyn Powers. All rights reserved.");
+                System.out.println("Copyright (C) Rave Wyvern. All rights reserved.");
                 System.out.println();
                 System.out.println("Install the lastest Terminal for new features and improvements! https://github.com/ravewyvern/Fun-java-stuff");
                 System.out.println();
