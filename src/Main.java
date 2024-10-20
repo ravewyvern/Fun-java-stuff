@@ -13,8 +13,9 @@ public class Main {
         System.out.println("Please select an option from the menu below:");
         System.out.println("1. A cool progress bar I made");
         System.out.println("2. Calcuate your sleep score");
-        System.out.println("3. Coming Soon");
+        System.out.println("3. Java terminal");
         System.out.println("4. Coming Soon");
+        System.out.println("5. Coming Soon");
         option = UtilityBelt.readInt("Enter the number of the option you want: ", 1, 4);
 
         switch (option)
@@ -37,9 +38,19 @@ public class Main {
                 SleepScore.sleepMenu(sleepScore, totalSleepTime, age, recommendedMinSleepTime, recommendedMaxSleepTime, sleepDescription);
                 break;
             case 3:
-                System.out.println("This option is coming soon!");
+                System.out.println("Java Terminal");
+                System.out.println("Copyright (C) Katelyn Powers. All rights reserved.");
+                System.out.println();
+                System.out.println("Install the lastest Terminal for new features and improvements! https://github.com/ravewyvern/Fun-java-stuff");
+                System.out.println();
+                System.out.println("Type 'help' for a list of commands.");
+                System.out.println();
+                TerminalCommands.commandSearch();
                 break;
             case 4:
+                System.out.println("This option is coming soon!");
+                break;
+            case 5:
                 System.out.println("This option is coming soon!");
                 break;
         }

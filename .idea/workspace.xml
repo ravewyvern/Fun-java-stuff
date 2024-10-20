@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="Made a progress bar code and finished the intro ui">
+    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="Added a sleep score menu option and improve README.md">
+      <change afterPath="$PROJECT_DIR$/src/TerminalCommands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProgressBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgressBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,10 @@
       <workItem from="1729274646747" duration="242000" />
       <workItem from="1729274932083" duration="83000" />
       <workItem from="1729275036130" duration="2142000" />
-      <workItem from="1729282682301" duration="1204000" />
+      <workItem from="1729282682301" duration="1295000" />
+      <workItem from="1729293693632" duration="15000" />
+      <workItem from="1729349227829" duration="2029000" />
+      <workItem from="1729454842974" duration="641000" />
     </task>
     <task id="LOCAL-00001" summary="Inital commit">
       <option name="closed" value="true" />
@@ -110,7 +114,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729275123482</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="combined 2 methods">
+      <option name="closed" value="true" />
+      <created>1729284183438</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729284183438</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added a sleep score menu option and improve README.md">
+      <option name="closed" value="true" />
+      <created>1729350542568</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729350542568</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +138,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inital commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inital commit" />
+    <MESSAGE value="combined 2 methods" />
+    <MESSAGE value="Added a sleep score menu option and improve README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a sleep score menu option and improve README.md" />
   </component>
 </project>
