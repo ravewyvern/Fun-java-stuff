@@ -16,7 +16,7 @@ public class Main {
         System.out.println("3. Java terminal");
         System.out.println("4. Coming Soon");
         System.out.println("5. Coming Soon");
-        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1, 4);
+        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1, 5);
 
         switch (option)
         {

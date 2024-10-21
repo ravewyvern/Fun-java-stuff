@@ -1,3 +1,6 @@
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+
 public class TerminalCommands {
 
     public static String directory = "Users\\ravewyvern";
@@ -12,7 +15,7 @@ public class TerminalCommands {
 
             switch (command.toLowerCase()) {
                 case "help":
-                    System.out.println("Available commands: help, exit, version, cd");
+                    System.out.println("Available commands: help, exit, version, cd, date");
                     break;
                 case "exit":
                     System.out.println("Exiting the terminal...");
@@ -22,6 +25,11 @@ public class TerminalCommands {
                     break;
                 case "cd":
                     TerminalCommands.changeDirectory(TerminalCommands.wordExtractor(2, fullCommand));
+                    break;
+                case "date":
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                    LocalDateTime now = LocalDateTime.now();
+                    System.out.println(dtf.format(now));
                     break;
                 default:
                     System.out.println("Unknown command: " + command);
