@@ -11,7 +11,7 @@ public class TerminalCommands {
 
         while (!command.equals("exit")) {
             fullCommand = UtilityBelt.readString("C:\\" + directory + ">");
-            command = TerminalCommands.wordExtractor(1, fullCommand);
+            command = TerminalCommands.wordExtractor(1, 1, fullCommand);
 
             switch (command.toLowerCase()) {
                 case "help":
@@ -24,7 +24,7 @@ public class TerminalCommands {
                     System.out.println("Terminal version 1.0");
                     break;
                 case "cd":
-                    TerminalCommands.changeDirectory(TerminalCommands.wordExtractor(2, fullCommand));
+                    TerminalCommands.changeDirectory(TerminalCommands.wordExtractor(2, 2, fullCommand));
                     break;
                 case "date":
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -37,15 +37,33 @@ public class TerminalCommands {
             }
         }
     }
-
-    public static String wordExtractor(int position, String input) {
-        String[] words = input.split("\\s+");
-        if (position > 0 && position <= words.length) {
-            return words[position - 1];
-        } else {
-            return "";  // Return an empty string if the position is out of bounds
-        }
+    
+public static String wordExtractor(int startPosition, int endPosition, String input) {
+    String[] words = input.split("\\s+");
+    
+    // Adjust startPosition to default to 1 if it's 0 or less (to capture from the start)
+    if (startPosition <= 0) {
+        startPosition = 1;
     }
+    
+    // Adjust endPosition to capture all words if it's 0 or greater than the length
+    if (endPosition <= 0 || endPosition > words.length) {
+        endPosition = words.length;
+    }
+    
+    // Check if the positions are valid
+    if (startPosition > words.length || startPosition > endPosition) {
+        return ""; // Return an empty string if the range is invalid
+    }
+    
+    // Extract words from startPosition to endPosition (both inclusive)
+    StringBuilder extracted = new StringBuilder();
+    for (int i = startPosition - 1; i < endPosition; i++) {
+        extracted.append(words[i]).append(" ");
+    }
+    
+    return extracted.toString().trim(); // Trim to remove the extra space at the end
+}
 
     public static void changeDirectory(String input) {
         // Normalize slashes to backslashes
