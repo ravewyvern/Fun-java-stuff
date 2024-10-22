@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="Added a cd command and a method to extract words from a string">
+    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="Added a date command and fixed a bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TerminalCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TerminalCommands.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +107,8 @@
       <workItem from="1729460190794" duration="1947000" />
       <workItem from="1729480520190" duration="43000" />
       <workItem from="1729485210895" duration="324000" />
-      <workItem from="1729527897948" duration="313000" />
+      <workItem from="1729527897948" duration="551000" />
+      <workItem from="1729566086637" duration="4780000" />
     </task>
     <task id="LOCAL-00001" summary="Inital commit">
       <option name="closed" value="true" />
@@ -142,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729455716365</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added a date command and fixed a bug">
+      <option name="closed" value="true" />
+      <created>1729528441686</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729528441686</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +172,7 @@
     <MESSAGE value="combined 2 methods" />
     <MESSAGE value="Added a sleep score menu option and improve README.md" />
     <MESSAGE value="Added a terminal with few a features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a terminal with few a features" />
+    <MESSAGE value="Added a date command and fixed a bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a date command and fixed a bug" />
   </component>
 </project>
