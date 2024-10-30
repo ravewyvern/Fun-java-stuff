@@ -14,8 +14,9 @@ public class Main {
         System.out.println("1. A cool progress bar I made");
         System.out.println("2. Calcuate your sleep score");
         System.out.println("3. Java terminal");
-        System.out.println("4. Coming Soon");
+        System.out.println("4. Misc Class Example Code");
         System.out.println("5. Coming Soon");
+        System.out.println("6. Coming Soon");
         option = UtilityBelt.readInt("Enter the number of the option you want: ", 1, 5);
 
         switch (option)
@@ -48,9 +49,25 @@ public class Main {
                 TerminalCommands.commandSearch();
                 break;
             case 4:
-                System.out.println("This option is coming soon!");
+                option = UtilityBelt.readInt("Enter the number of a class example Options 1 or 2: ", 1, 2);
+                switch (option) {
+                    case 1:
+                        System.out.println("This I call gambling addiction");
+                        ClassExampleCode.gamblingAddiction();
+                        break;
+                    case 2:
+                        System.out.println("This is a hailstone sequence");
+                        ClassExampleCode.hailstoneMain();
+                        break;
+                    default:
+                        System.out.println("Invalid option");
+                        break;
+                }
                 break;
             case 5:
+                System.out.println("This option is coming soon!");
+                break;
+            case 6:
                 System.out.println("This option is coming soon!");
                 break;
         }
