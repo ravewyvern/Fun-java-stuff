@@ -15,7 +15,7 @@ public class Main {
         System.out.println("2. Calcuate your sleep score");
         System.out.println("3. Java terminal");
         System.out.println("4. Misc Class Example Code");
-        System.out.println("5. Coming Soon");
+        System.out.println("5. Number Manager");
         System.out.println("6. Coming Soon");
         option = UtilityBelt.readInt("Enter the number of the option you want: ", 1, 5);
 
@@ -65,10 +65,53 @@ public class Main {
                 }
                 break;
             case 5:
-                System.out.println("This option is coming soon!");
+                System.out.println("Welcome to the Number Manager!");
+                int[] numbers = new int[UtilityBelt.readInt("Enter the number of numbers you want to manage: ", 1, 100)];
+                for (int i = 0; i < numbers.length; i++) {
+                    numbers[i] = UtilityBelt.readInt("Enter number " + (i + 1) + ": ", Integer.MIN_VALUE, Integer.MAX_VALUE);
+                }
+                System.out.println("The numbers are: " + ArrayMethods.arrayString(numbers));
+                System.out.println("You can run 'display numbers', 'swap', 'list smallest', 'flip', or 'sort'.");
+                boolean running = true;
+                while (running) {
+                String numOption = UtilityBelt.readString("Enter what you want to do with the numbers or type exit: ");
+                switch (numOption.toLowerCase()) {
+                    case "display numbers":
+                        System.out.println(ArrayMethods.arrayString(numbers));
+                        break;
+                    case "swap":
+                        int a = UtilityBelt.readInt("Enter the first index to swap: ", 0, numbers.length - 1);
+                        int b = UtilityBelt.readInt("Enter the second index to swap: ", 0, numbers.length - 1);
+                        ArrayMethods.swap(numbers, a, b);
+                        System.out.println("The numbers have been swapped");
+                        break;
+                    case "list smallest":
+                        int startIndex = UtilityBelt.readInt("Enter the index to start searching for the smallest number: ", 0, numbers.length - 1);
+                        System.out.println("The smallest number is " + numbers[ArrayMethods.indexOfMin(numbers, startIndex)] + " at index " + ArrayMethods.indexOfMin(numbers, startIndex));
+                        break;
+                    case "flip":
+                        ArrayMethods.reverse(numbers);
+                        System.out.println("The numbers have been flipped");
+                        break;
+                    case "sort":
+                        ArrayMethods.selectionSort(numbers);
+                        System.out.println("The numbers have now been sorted");
+                        break;
+                    case "exit":
+                        System.out.println("Exiting the Number Manager...");
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid option");
+                        break;
+                }
+                }
                 break;
             case 6:
                 System.out.println("This option is coming soon!");
+                break;
+            default:
+                System.out.println("Invalid option");
                 break;
         }
     }
