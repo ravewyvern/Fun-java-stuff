@@ -60,29 +60,36 @@ public class RandomCode {
 
     public static void ticTacToeGame(char[][] board)
     {
-        int selectedRow = 0, selectedCol = 0;
-
-        selectedRow = UtilityBelt.readInt("Your move please type the row to go on: ", 1, 3);
-        selectedCol = UtilityBelt.readInt("Your move please type the column to go on: ", 1, 3);
+        int selectedRow = 0, selectedCol = 0, runTimes = 0;
+        boolean comtinueloop = true;
+        String output = "";
+        output = UtilityBelt.readString("Your move please type the row followed by the column to go on: ");
+        selectedRow = Integer.parseInt(TerminalCommands.wordExtractor(1, 1, output));
+        selectedCol = Integer.parseInt(TerminalCommands.wordExtractor(2, 2, output));
         board[selectedRow - 1][selectedCol - 1] = 'X';
         printBoard(board);
         Random rand = new Random();
         p("computer move");
         selectedCol = rand.nextInt(3);
         selectedRow = rand.nextInt(3);
-        boolean comtinueloop = true;
-        while (comtinueloop) {
-        if (isSpotTaken(board, selectedRow, selectedCol) == true) {
-        board[selectedRow][selectedCol] = 'O';
-        comtinueloop = false;
-        }
-        else {
-        }
-    }
+        comtinueloop = true;
+        runTimes = 0;
+            while (comtinueloop) {
+                if (board[selectedRow][selectedCol] == '_') {
+                    board[selectedRow][selectedCol] = 'O';
+                    runTimes = 0;
+                    comtinueloop = false;
+                }
+                else if (runTimes == 9) {
+                    p("no more possible moves");
+                    comtinueloop = false;
+                }
+                else {
+                    selectedCol = rand.nextInt(3);
+                    selectedRow = rand.nextInt(3);
+                    runTimes++;
+                }
+            }
         printBoard(board);
-    }
-
-    public static boolean isSpotTaken(char[][] board, int row, int col) {
-        return board[row][col] == '_';
     }
 }
