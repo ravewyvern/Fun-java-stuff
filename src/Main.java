@@ -18,7 +18,9 @@ public class Main {
         System.out.println("5. Number Manager");
         System.out.println("6. Random code I wrote");
         System.out.println("7. tic tac toe");
-        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,7);
+        System.out.println("8. Chess");
+        System.out.println("9. Exit");
+        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,9);
 
         switch (option)
         {
@@ -115,6 +117,13 @@ public class Main {
                 break;
             case 7:
                 RandomCode.ticTacToe();
+                break;
+            case 8:
+                System.out.println("Please note that this is not completed yet");
+                chess.startChess();
+                break;
+            case 9:
+                System.out.println("Exiting...");
                 break;
             default:
                 System.out.println("Invalid option");
