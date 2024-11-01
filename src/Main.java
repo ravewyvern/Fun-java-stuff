@@ -17,7 +17,8 @@ public class Main {
         System.out.println("4. Misc Class Example Code");
         System.out.println("5. Number Manager");
         System.out.println("6. Random code I wrote");
-        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1, 5);
+        System.out.println("7. tic tac toe");
+        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,7);
 
         switch (option)
         {
@@ -111,6 +112,9 @@ public class Main {
                 System.out.println("here is some random code I wrote");
                 System.out.println();
                 RandomCode.primaryCodeRunner();
+                break;
+            case 7:
+                RandomCode.ticTacToe();
                 break;
             default:
                 System.out.println("Invalid option");
