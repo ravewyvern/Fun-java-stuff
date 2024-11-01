@@ -12,14 +12,14 @@ public class RandomCode {
         };
         System.out.println(scores[1][2] + " " + scores.length + " " + scores[0].length); 
         // first goes to row then to column
-        p("output test");
+        pl("output test");
         for (int i = 0; i < scores.length; i++) {
             for (int j = 0; j < scores[i].length; j++) {
                 System.out.print(scores[i][j] + " ");
             }
             System.out.println();
         }
-        p("attept to transpose");
+        pl("attept to transpose");
         // not squares arrays are the worst
         for (int i = 0; i < scores.length; i++) {
             for (int j = 0; j < scores[i].length; j++) {
@@ -30,12 +30,15 @@ public class RandomCode {
         }
     }
 
-    public static void p (String s) {
+    public static void pl (String s) {
         System.out.println(s);
+    }
+    public static void p (String s) {
+        System.out.print(s);
     }
 
     public static void ticTacToe() {
-        p("Welcome to tic tac toe");
+        pl("Welcome to tic tac toe");
         char[][] board = 
         {
             {'_', '_', '_'},
@@ -45,6 +48,14 @@ public class RandomCode {
         printBoard(board);
         for (int i = 0; i < 5; i++) {
             ticTacToeGame(board);
+            if (checkForWinner(board, 'X')) {
+                pl("You win");
+                break;
+            }
+            else if (checkForWinner(board, 'O')) {
+                pl("Computer wins");
+                break;
+            }
         }
 
     }
@@ -72,12 +83,12 @@ public class RandomCode {
                 comtinueloop = false;
             }
             else {
-                p("That spot is already taken, try again");
+                pl("That spot is already taken, try again");
             }
         }
         printBoard(board);
         Random rand = new Random();
-        p("computer move");
+        pl("computer move");
         selectedCol = rand.nextInt(3);
         selectedRow = rand.nextInt(3);
         comtinueloop = true;
@@ -89,7 +100,7 @@ public class RandomCode {
                     comtinueloop = false;
                 }
                 else if (runTimes == 9) {
-                    p("no more possible moves");
+                    pl("no more possible moves");
                     comtinueloop = false;
                 }
                 else {
@@ -99,5 +110,32 @@ public class RandomCode {
                 }
             }
         printBoard(board);
+    }
+
+    public static boolean checkForWinner(char[][] array, char winningChar) {
+        // Check rows
+        for (int row = 0; row < 3; row++) {
+            if (array[row][0] == winningChar && array[row][1] == winningChar && array[row][2] == winningChar) {
+                return true;
+            }
+        }
+
+        // Check columns
+        for (int col = 0; col < 3; col++) {
+            if (array[0][col] == winningChar && array[1][col] == winningChar && array[2][col] == winningChar) {
+                return true;
+            }
+        }
+
+        // Check diagonals
+        if (array[0][0] == winningChar && array[1][1] == winningChar && array[2][2] == winningChar) {
+            return true;
+        }
+        if (array[0][2] == winningChar && array[1][1] == winningChar && array[2][0] == winningChar) {
+            return true;
+        }
+
+        // No winner
+        return false;
     }
 }

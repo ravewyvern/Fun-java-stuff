@@ -8,7 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="improved the tic tac toe board">
+    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="Blocked the player from placing a X on already used space">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RandomCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +122,8 @@
       <workItem from="1730350254523" duration="1460000" />
       <workItem from="1730351796399" duration="25000" />
       <workItem from="1730356247969" duration="594000" />
-      <workItem from="1730443638311" duration="1917000" />
+      <workItem from="1730443638311" duration="2589000" />
+      <workItem from="1730480774482" duration="2053000" />
     </task>
     <task id="LOCAL-00001" summary="Inital commit">
       <option name="closed" value="true" />
@@ -179,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730444819963</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Blocked the player from placing a X on already used space">
+      <option name="closed" value="true" />
+      <created>1730446511394</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730446511394</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +214,7 @@
     <MESSAGE value="Added a date command and fixed a bug" />
     <MESSAGE value="Added a number manager and updated README.md" />
     <MESSAGE value="improved the tic tac toe board" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved the tic tac toe board" />
+    <MESSAGE value="Blocked the player from placing a X on already used space" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blocked the player from placing a X on already used space" />
   </component>
 </project>
