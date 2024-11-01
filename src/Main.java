@@ -16,7 +16,7 @@ public class Main {
         System.out.println("3. Java terminal");
         System.out.println("4. Misc Class Example Code");
         System.out.println("5. Number Manager");
-        System.out.println("6. Coming Soon");
+        System.out.println("6. Random code I wrote");
         option = UtilityBelt.readInt("Enter the number of the option you want: ", 1, 5);
 
         switch (option)
@@ -108,7 +108,9 @@ public class Main {
                 }
                 break;
             case 6:
-                System.out.println("This option is coming soon!");
+                System.out.println("here is some random code I wrote");
+                System.out.println();
+                RandomCode.primaryCodeRunner();
                 break;
             default:
                 System.out.println("Invalid option");
