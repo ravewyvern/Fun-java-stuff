@@ -63,10 +63,18 @@ public class RandomCode {
         int selectedRow = 0, selectedCol = 0, runTimes = 0;
         boolean comtinueloop = true;
         String output = "";
-        output = UtilityBelt.readString("Your move please type the row followed by the column to go on: ");
-        selectedRow = Integer.parseInt(TerminalCommands.wordExtractor(1, 1, output));
-        selectedCol = Integer.parseInt(TerminalCommands.wordExtractor(2, 2, output));
-        board[selectedRow - 1][selectedCol - 1] = 'X';
+        while (comtinueloop) {
+            output = UtilityBelt.readString("Your move please type the row followed by the column to go on: ");
+            selectedRow = Integer.parseInt(TerminalCommands.wordExtractor(1, 1, output));
+            selectedCol = Integer.parseInt(TerminalCommands.wordExtractor(2, 2, output));
+            if (board[selectedRow - 1][selectedCol - 1] == '_') {
+                board[selectedRow - 1][selectedCol - 1] = 'X';
+                comtinueloop = false;
+            }
+            else {
+                p("That spot is already taken, try again");
+            }
+        }
         printBoard(board);
         Random rand = new Random();
         p("computer move");
