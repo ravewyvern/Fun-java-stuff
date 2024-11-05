@@ -3,6 +3,19 @@ import java.util.Random;
 public class RandomCode {
 
     public static void primaryCodeRunner() {
+        int[] numbers = new int[5];
+        numbers[0] = 1;
+        numbers[1] = 2;
+        numbers[2] = 3;
+        numbers[3] = 4;
+        numbers[4] = 5;
+        System.out.println(numbers[0] + " " + numbers[1] + " " + numbers[2] + " " + numbers[3] + " " + numbers[4]);
+        System.out.println(numbers.length);
+        numbers = intArray(numbers, -2);
+        System.out.println(numbers[0] + " " + numbers[1] + " " + numbers[2] + " " + numbers[3] + " " + numbers[4]);
+        System.out.println(numbers.length);
+
+
         System.out.println("Nothing yet");
         int[][] scores = 
         {//  0  1  2 colums
@@ -28,6 +41,13 @@ public class RandomCode {
             }
             System.out.println();
         }
+    }
+    public static int[] intArray(int[] array, int changeSize) {
+        int[] newArray = new int[array.length + changeSize];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
     }
 
     public static void pl (String s) {

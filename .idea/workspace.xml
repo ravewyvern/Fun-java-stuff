@@ -9,9 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="Added chess WIP">
-      <change afterPath="$PROJECT_DIR$/src/chess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RandomCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RandomCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,8 +92,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -125,7 +124,13 @@
       <workItem from="1730356247969" duration="594000" />
       <workItem from="1730443638311" duration="2589000" />
       <workItem from="1730480774482" duration="2344000" />
-      <workItem from="1730487037170" duration="3796000" />
+      <workItem from="1730487037170" duration="4409000" />
+      <workItem from="1730491802156" duration="402000" />
+      <workItem from="1730683679559" duration="81000" />
+      <workItem from="1730696760998" duration="403000" />
+      <workItem from="1730697217323" duration="235000" />
+      <workItem from="1730731997808" duration="348000" />
+      <workItem from="1730735886049" duration="907000" />
     </task>
     <task id="LOCAL-00001" summary="Inital commit">
       <option name="closed" value="true" />
@@ -199,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730483140697</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added chess WIP">
+      <option name="closed" value="true" />
+      <created>1730491177291</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730491177291</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +239,7 @@
     <MESSAGE value="improved the tic tac toe board" />
     <MESSAGE value="Blocked the player from placing a X on already used space" />
     <MESSAGE value="added a winner checking method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a winner checking method" />
+    <MESSAGE value="Added chess WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added chess WIP" />
   </component>
 </project>
