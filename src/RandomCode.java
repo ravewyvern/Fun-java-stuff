@@ -3,6 +3,31 @@ import java.util.Random;
 public class RandomCode {
 
     public static void primaryCodeRunner() {
+                // Declaration
+        String[] name = {"T-Bone", "Max", "Peanut"};
+        String[] eyeColor = {"black", "brown", "green"};
+        String[] birthState = {"California", "Ohio", "Vermont"};
+        int[] age = {5, 3, 2};
+        double[] weightInPounds = {14, 70, 25};
+        String[] likesTo;
+
+        // INITIALIZATION SECTION
+//        name = "T-Bone";
+//        eyeColor = "black";
+//        age = 8;
+//        weightInPounds = 14;
+//        birthState = "California";
+        likesTo = new String[4];
+        likesTo[0] = "go to the park";
+        likesTo[1] = "sleep";
+        likesTo[2] = "play with other dogs";
+        likesTo[3] = "bark";
+
+        dog tBone = new dog("T-Bone", "black", "California", 8, 14, likesTo);
+
+
+        tBone.welcome();
+        System.out.println("-----------------");
         int[] numbers = new int[5];
         numbers[0] = 1;
         numbers[1] = 2;
