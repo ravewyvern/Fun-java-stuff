@@ -3,6 +3,7 @@ import java.util.Random;
 public class chess {
 
     public static void startChess() {
+        // DEV NOTE: 0 = white 1 = black
         System.out.println("Welcome to Chess!");
         System.out.println("Chess is a two-player strategy board game played on an 8x8 board.");
         System.out.println("The game is played by millions of people worldwide.");
@@ -130,6 +131,22 @@ public class chess {
             case 4: return secondColumnIndex; // Column index for second position
             default: return -1; // Invalid partToReturn
         }
+    }
+
+    public static boolean validSpotChecker(String move, char[][], char team) {
+        return false; //placeholder
+    }
+
+    public static boolean validPieceMoveChecker(String move, char[][] board, char team) {
+        return false; //placeholder
+    }
+
+    public static char pieceList(char team, int pieceNum) {
+        char[][] peices = {
+                {'R', 'N', 'B', 'Q', 'K', 'P'},
+                {'r', 'n', 'b', 'q', 'k', 'p'},
+        };
+        return ' '; //placeholder
     }
 
 }
