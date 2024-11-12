@@ -133,7 +133,7 @@ public class chess {
         }
     }
 
-    public static boolean validSpotChecker(String move, char[][], char team) {
+    public static boolean validSpotChecker(String move, char[][] board, char team) {
         return false; //placeholder
     }
 
