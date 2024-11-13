@@ -127,10 +127,10 @@ public class Main {
                 System.out.println("Please note that this is not completed yet");
                 chess.startChess();
                 break;
-            case 9:
+            case 10:
                 System.out.println("Exiting...");
                 break;
-            case 10:
+            case 9:
                 int numberOfDetectors = UtilityBelt.readInt("Enter the number of times to print detector: ", 1, 99999);
                 System.out.print("rat ");
                 for (int i = 0; i < numberOfDetectors; i++) {
