@@ -52,9 +52,14 @@ public class chess {
                         startColumn = convertToArrayIndex(move, 2);
                         endRow = convertToArrayIndex(move, 3);
                         endColumn = convertToArrayIndex(move, 4);
-                        board[endRow][endColumn] = board[startRow][startColumn];
-                        board[startRow][startColumn] = emptyBoard[startRow][startColumn];
-                        printBoard(board);
+                        if (validSpotChecker(move, board, '1')) {
+                            board[endRow][endColumn] = board[startRow][startColumn];
+                            board[startRow][startColumn] = emptyBoard[startRow][startColumn];
+                            printBoard(board);
+                        }
+                        else {
+                            System.out.println("Invalid move");
+                        }
                     }
                     running = false;
                     break;
@@ -133,20 +138,29 @@ public class chess {
         }
     }
 
-    public static boolean validSpotChecker(String move, char[][] board, char team) {
+    public static boolean validSpotChecker(String move, char[][] board, int team) {
+        if (board[convertToArrayIndex(move, 3)][convertToArrayIndex(move, 4)] == '□' || board[convertToArrayIndex(move, 3)][convertToArrayIndex(move, 4)] == '■') {
+            return true;
+        }
+        for (int i = 0; i < 6; i++) {
+            if (board[convertToArrayIndex(move, 3)][convertToArrayIndex(move, 4)] == pieceList(team, i)) {
+                return true;
+            }
+        }
+       
+        return false;
+    }
+
+    public static boolean validPieceMoveChecker(String move, char[][] board, int team) {
         return false; //placeholder
     }
 
-    public static boolean validPieceMoveChecker(String move, char[][] board, char team) {
-        return false; //placeholder
-    }
-
-    public static char pieceList(char team, int pieceNum) {
+    public static char pieceList(int team, int pieceNum) {
         char[][] peices = {
                 {'R', 'N', 'B', 'Q', 'K', 'P'},
                 {'r', 'n', 'b', 'q', 'k', 'p'},
         };
-        return ' '; //placeholder
+        return peices[team][pieceNum];
     }
 
 }
