@@ -19,8 +19,9 @@ public class Main {
         System.out.println("6. Random code I wrote");
         System.out.println("7. tic tac toe");
         System.out.println("8. Chess");
-        System.out.println("9. Exit");
-        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,9);
+        System.out.println("9. print rat detectors");
+        System.out.println("10. Exit");
+        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,10);
 
         switch (option)
         {
@@ -129,6 +130,13 @@ public class Main {
             case 9:
                 System.out.println("Exiting...");
                 break;
+            case 10:
+                int numberOfDetectors = UtilityBelt.readInt("Enter the number of times to print detector: ", 1, 99999);
+                System.out.print("rat ");
+                for (int i = 0; i < numberOfDetectors; i++) {
+                    System.out.print("detector ");
+                }
+                System.out.println("detected");
             default:
                 System.out.println("Invalid option");
                 break;
