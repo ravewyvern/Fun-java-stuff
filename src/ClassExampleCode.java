@@ -24,6 +24,20 @@ public class ClassExampleCode {
         }
     }
 
+    public static void weatherStation() {
+
+        // something might go here
+
+        WeatherStation wx = new WeatherStation();
+
+        wx.setTemperature(72);
+
+        System.out.println("Temperature is " + wx.getTemperatureC() + "C");
+
+        System.out.println("Temperature is " + wx.getTemperatureF() + "F");
+
+        }
+
     public static int generateHailstoneSequence(int n) {
         int length = 0;
         while (n != 1) {

@@ -52,11 +52,15 @@ public class Main {
                 TerminalCommands.commandSearch();
                 break;
             case 4:
-                option = UtilityBelt.readInt("Enter the number of a class example Options 1 or 2: ", 1, 2);
+                option = UtilityBelt.readInt("Enter the number of a class example Options 11-4: ", 1, 5);
                 switch (option) {
                     case 1:
                         System.out.println("This I call gambling addiction");
                         ClassExampleCode.gamblingAddiction();
+                        break;
+                        case 3:
+                        System.out.println("This is a weather station");
+                        ClassExampleCode.weatherStation();
                         break;
                     case 2:
                         System.out.println("This is a hailstone sequence");
