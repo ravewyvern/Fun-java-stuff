@@ -1,14 +1,20 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    public static boolean debugMode = false, quitProgram = false;
+
     public static void main(String[] args) {
+        System.out.println("Welcomes to raves java fun");
+        mainRunner();
+    }
+
+    public static void mainRunner() {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         // initializing variables
         int option = 0, barLength = 0, maxLength = 0;
 
-
-        System.out.println("Welcomes to raves java fun");
         System.out.println();
         System.out.println("Please select an option from the menu below:");
         System.out.println("1. A cool progress bar I made");
@@ -20,8 +26,9 @@ public class Main {
         System.out.println("7. tic tac toe");
         System.out.println("8. Chess");
         System.out.println("9. print rat detectors");
-        System.out.println("10. Exit");
-        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,10);
+        System.out.println("10. Enable debug mode");
+        System.out.println("11. Exit");
+        option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,100);
 
         switch (option)
         {
@@ -127,8 +134,9 @@ public class Main {
                 System.out.println("Please note that this is not completed yet");
                 chess.startChess();
                 break;
-            case 10:
+            case 11:
                 System.out.println("Exiting...");
+                quitProgram = true;
                 break;
             case 9:
                 int numberOfDetectors = UtilityBelt.readInt("Enter the number of times to print detector: ", 1, 99999);
@@ -137,9 +145,22 @@ public class Main {
                     System.out.print("detector ");
                 }
                 System.out.println("detected");
+                break;
+            case 10:
+                if (debugMode) {
+                    debugMode = false;
+                    System.out.println("Debug mode disabled");
+                } else {
+                    debugMode = true;
+                    System.out.println("Debug mode enabled");
+                }
+                break;
             default:
                 System.out.println("Invalid option");
                 break;
+        }
+        if (!quitProgram) {
+            mainRunner();
         }
     }
 }

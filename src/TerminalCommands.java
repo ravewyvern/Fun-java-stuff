@@ -5,9 +5,21 @@ import java.util.Random;
 public class TerminalCommands {
 
     public static String directory = "Users\\ravewyvern";
+    public static String[] commandHistory = new String[10];
 
     public static void commandSearch()
     {
+        commandHistory[0] = "hist 0";
+        commandHistory[1] = "hist 1";
+        commandHistory[2] = "hist 2";
+        commandHistory[3] = "hist 3";
+        commandHistory[4] = "hist 4";
+        commandHistory[5] = "hist 5";
+        commandHistory[6] = "hist 6";
+        commandHistory[7] = "hist 7";
+        commandHistory[8] = "hist 8";
+        commandHistory[9] = "hist 9";
+
         String command = "", fullCommand = "";
 
         while (!command.equals("exit")) {
@@ -50,34 +62,40 @@ public class TerminalCommands {
                         System.out.println("Error: The dice rolls cant be non-integer and you must include slides of dice and amount of rolls.");
                     }
                     break;
+                case "rl":
+                    for (int i = 0; i < 10; i++) {
+                        System.out.println(i + ": " + commandHistory[i]);
+                    }
+                    break;
                 default:
                     System.out.println("Unknown command: " + command);
                     break;
             }
+            commandHistory[commandHistory.length -1] = fullCommand;
+
+            for (int i = 0; i < commandHistory.length -1; i++) {
+                swapString(commandHistory, i, i + 1);
+                if (Main.debugMode) {
+                    System.out.println("Command history: " + commandHistory[i]);
+                }
+            }
         }
+    }
+
+    public static void swapString(String[] array, int a, int b)
+    {
+        String temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
     }
 
 public static void versionInterface()
 {
-    System.out.println("                                ..,   user@Device-Name");
-    System.out.println("                    ....,,:;+ccllll   -----------------------------");
-    System.out.println("      ...,,+:;  cllllllllllllllllll   OS: Windows 10 x86_64");
-    System.out.println(",cclllllllllll  lllllllllllllllllll   Kernel: Eggs");
-    System.out.println("llllllllllllll  lllllllllllllllllll   Uptime: 58 secs");
-    System.out.println("llllllllllllll  lllllllllllllllllll   Packages: 1056 (dpkg), 8 (snap)");
-    System.out.println("llllllllllllll  lllllllllllllllllll   Shell: bash 5.1.16");
-    System.out.println("llllllllllllll  lllllllllllllllllll   Theme: Adwaita [GTK3]");
-    System.out.println("llllllllllllll  lllllllllllllllllll   Icons: Adwaita [GTK3]");
-    System.out.println("                                      Terminal: Java Terminal");
-    System.out.println("llllllllllllll  lllllllllllllllllll   CPU: AMD Ryzen 7 5800X (16) @ 3.792GHz");
-    System.out.println("llllllllllllll  lllllllllllllllllll   GPU: cost way too much");
-    System.out.println("llllllllllllll  lllllllllllllllllll   Memory: 591MiB / 15950MiB");
-    System.out.println("llllllllllllll  lllllllllllllllllll");
-    System.out.println("llllllllllllll  lllllllllllllllllll");
-    System.out.println("`'ccllllllllll  lllllllllllllllllll");
-    System.out.println("       `' \\*::  :ccllllllllllllllll");
-    System.out.println("                       ````''*::cll");
-    System.out.println("                                 ``");
+    System.out.println("Java Terminal v1.2");
+    System.out.println("Developed by Ravewyvern");
+    System.out.println("This terminal is a simple command-line interface written in Java.");
+    System.out.println("It supports basic commands such as 'help', 'exit', 'version', 'cd', 'date', 'echo', 'clear', and 'dice'.");
+    System.out.println("Type 'help' for more information about each command.");
 }
 public static String wordExtractor(int startPosition, int endPosition, String input) {
     String[] words = input.split("\\s+");
@@ -145,7 +163,7 @@ public static String wordExtractor(int startPosition, int endPosition, String in
     {
         switch (command.toLowerCase()) {
             case "":
-                System.out.println("Available commands: help, exit, version, cd, date, echo, clear, dice");
+                System.out.println("Available commands: help, exit, version, cd, date, echo, clear, dice, rl");
                 System.out.println("Type 'help <command>' to get more information about a specific command.");
                 break;
             case "help":
@@ -176,6 +194,9 @@ public static String wordExtractor(int startPosition, int endPosition, String in
                 System.out.println("The 'dice' command rolls a specified number of dice with a specified number of sides.");
                 System.out.println("Usage: dice [number of dice] [number of sides]");
                 break;
+                case "rl":
+                System.out.println("The 'rl' will run the last run command or you can put a number after rl to run that command.");
+                System.out.println("Usage: rl [number of times to go back]");
             default:
                 System.out.println("Unknown command: " + command);
                 break;
