@@ -26,7 +26,7 @@ public class Main {
         System.out.println("7. tic tac toe");
         System.out.println("8. Chess");
         System.out.println("9. print rat detectors");
-        System.out.println("10. Enable debug mode");
+        System.out.println("10. Toggle debug mode");
         System.out.println("11. Exit");
         option = UtilityBelt.readInt("Enter the number of the option you want: ", 1,100);
 

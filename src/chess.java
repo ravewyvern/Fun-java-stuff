@@ -48,18 +48,31 @@ public class chess {
                     int startRow = 0, startColumn = 0, endRow = 0, endColumn = 0;
                     while (playing) {
                         move = UtilityBelt.readString("Enter your move: ");
+                        if (move.equals("exit")) {
+                            System.out.println("Exiting Chess...");
+                            playing = false;
+                            continue;
+                        }
                         startRow = convertToArrayIndex(move, 1);
                         startColumn = convertToArrayIndex(move, 2);
                         endRow = convertToArrayIndex(move, 3);
                         endColumn = convertToArrayIndex(move, 4);
-                        if (validSpotChecker(move, board, '1')) {
-                            board[endRow][endColumn] = board[startRow][startColumn];
-                            board[startRow][startColumn] = emptyBoard[startRow][startColumn];
-                            printBoard(board);
+
+                        if (Main.debugMode) {
+                            System.out.println("Start row: " + startRow);
+                            System.out.println("Start column: " + startColumn);
+                            System.out.println("End row: " + endRow);
+                            System.out.println("End column: " + endColumn);
                         }
-                        else {
-                            System.out.println("Invalid move");
+                         if (board[startRow][startColumn] == '□' || board[startRow][startColumn] == '■') {
+                            System.out.println("There is no piece to move");
+                            continue;
                         }
+                        board[endRow][endColumn] = board[startRow][startColumn];
+                        board[startRow][startColumn] = emptyBoard[startRow][startColumn];
+                        printBoard(board);
+                        
+
                     }
                     running = false;
                     break;
