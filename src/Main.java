@@ -13,14 +13,14 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         // initializing variables
-        int option = 0, barLength = 0, maxLength = 0;
+        int option = 0;
 
         System.out.println();
         System.out.println("Please select an option from the menu below:");
+        System.out.println("4. Misc Class Example Code");
         System.out.println("1. A cool progress bar I made");
         System.out.println("2. Calcuate your sleep score");
         System.out.println("3. Java terminal");
-        System.out.println("4. Misc Class Example Code");
         System.out.println("5. Number Manager");
         System.out.println("6. Random code I wrote");
         System.out.println("7. tic tac toe");
@@ -33,8 +33,8 @@ public class Main {
         switch (option)
         {
             case 1:
-                barLength = UtilityBelt.readInt("Enter the starting length of the progress bar: ", 0, 100);
-                maxLength = UtilityBelt.readInt("Enter the maximum length of the progress bar: ", 0, 100);
+                int barLength = UtilityBelt.readInt("Enter the starting length of the progress bar: ", 0, 100);
+                int maxLength = UtilityBelt.readInt("Enter the maximum length of the progress bar: ", 0, 100);
                 ProgressBar.runBar(barLength, maxLength);
                 break;
             case 2:

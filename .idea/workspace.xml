@@ -8,10 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="fixed bug">
+    <list default="true" id="5d47a77d-6f5f-4180-8aed-c6d0432bc6a3" name="Changes" comment="Added a history for TerminalCommands and looping for entire program">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TerminalCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TerminalCommands.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +42,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/chess.java" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -159,7 +158,8 @@
       <workItem from="1731433825340" duration="45000" />
       <workItem from="1731470368088" duration="1029000" />
       <workItem from="1731510436171" duration="39000" />
-      <workItem from="1731600896068" duration="4052000" />
+      <workItem from="1731600896068" duration="4337000" />
+      <workItem from="1731606213343" duration="441000" />
     </task>
     <task id="LOCAL-00001" summary="Inital commit">
       <option name="closed" value="true" />
@@ -281,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731470643757</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added a history for TerminalCommands and looping for entire program">
+      <option name="closed" value="true" />
+      <created>1731605719241</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1731605719241</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +322,7 @@
     <MESSAGE value="fixed a misplaced comma" />
     <MESSAGE value="added rat detector printer" />
     <MESSAGE value="fixed bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug" />
+    <MESSAGE value="Added a history for TerminalCommands and looping for entire program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a history for TerminalCommands and looping for entire program" />
   </component>
 </project>

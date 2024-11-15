@@ -99,6 +99,7 @@ public class TerminalCommands {
                     } 
                     else {
                         System.out.println("Error: The calculator only supports integers and the operators +, -, *, /, and %.");
+                        break;
                     }
                 default:
                     System.out.println("Unknown command: " + command);
