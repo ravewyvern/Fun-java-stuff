@@ -6,26 +6,36 @@ public class TerminalCommands {
 
     public static String directory = "Users\\ravewyvern";
     public static String[] commandHistory = new String[10];
+    private static Long startTime = System.currentTimeMillis();
 
     public static void commandSearch()
     {
-        commandHistory[0] = "hist 0";
-        commandHistory[1] = "hist 1";
-        commandHistory[2] = "hist 2";
-        commandHistory[3] = "hist 3";
-        commandHistory[4] = "hist 4";
-        commandHistory[5] = "hist 5";
-        commandHistory[6] = "hist 6";
-        commandHistory[7] = "hist 7";
-        commandHistory[8] = "hist 8";
-        commandHistory[9] = "hist 9";
+        if (Main.debugMode) {
+            System.out.println("command history variables assigned");
+            commandHistory[0] = "hist 0";
+            commandHistory[1] = "hist 1";
+            commandHistory[2] = "hist 2";
+            commandHistory[3] = "hist 3";
+            commandHistory[4] = "hist 4";
+            commandHistory[5] = "hist 5";
+            commandHistory[6] = "hist 6";
+            commandHistory[7] = "hist 7";
+            commandHistory[8] = "hist 8";
+            commandHistory[9] = "hist 9";
+        }
 
         String command = "", fullCommand = "";
 
         while (!command.equals("exit")) {
             fullCommand = UtilityBelt.readString("C:\\" + directory + ">");
             command = TerminalCommands.wordExtractor(1, 1, fullCommand);
-
+            if (Main.debugMode) {
+                System.out.println("Full command: " + fullCommand);
+                System.out.println("Command (cmd part 1): " + command);
+                System.out.println("Command part 2: " + TerminalCommands.wordExtractor(2, 2, fullCommand));
+                System.out.println("Command part 3: " + TerminalCommands.wordExtractor(3, 3, fullCommand));
+                System.out.println("Rest of command: " + TerminalCommands.wordExtractor(4, 0, fullCommand));
+            }
             switch (command.toLowerCase()) {
                 case "help":
                     TerminalCommands.commandHelp(TerminalCommands.wordExtractor(2, 2, fullCommand));
@@ -67,6 +77,29 @@ public class TerminalCommands {
                         System.out.println(i + ": " + commandHistory[i]);
                     }
                     break;
+                case "uptime":
+                    long currentTime = System.currentTimeMillis();
+                    long uptime = currentTime - startTime;
+                    System.out.println("Uptime: " + uptime + " milliseconds");
+                    break;
+                case "flip":
+                    Random flip = new Random();
+                    int flipCoin = flip.nextInt(2);
+                    if (flipCoin == 0) {
+                        System.out.println("Heads");
+                    } else {
+                        System.out.println("Tails");
+                    }
+                    break;
+                case "calc":
+                    if (TerminalCommands.wordExtractor(2, 2, fullCommand).matches("\\d+") && (TerminalCommands.wordExtractor(4, 4, fullCommand).matches("\\d+"))) {
+                        int answer = calcNumber(Integer.parseInt(wordExtractor(2, 2, fullCommand)), Integer.parseInt(wordExtractor(4, 4, fullCommand)), wordExtractor(3, 3, fullCommand).charAt(0));
+                        System.out.println("The answer is: " + answer);
+                        break;
+                    } 
+                    else {
+                        System.out.println("Error: The calculator only supports integers and the operators +, -, *, /, and %.");
+                    }
                 default:
                     System.out.println("Unknown command: " + command);
                     break;
@@ -151,6 +184,14 @@ public static String wordExtractor(int startPosition, int endPosition, String in
 
     public static void rollDice(int diceSides, int numOfDice) {
        int diceRoll = 0;
+       if (diceSides == 0) {
+           Random dice = new Random();
+           diceSides = dice.nextInt(100) + 1;
+       }
+       if (numOfDice == 0) {
+           Random dice = new Random();
+           numOfDice = dice.nextInt(100) + 1;
+       }
        System.out.println("Rolling " + numOfDice + " dice with " + diceSides + " sides each:");
        for (int i = 0; i < numOfDice; i++) {
            Random dice = new Random();
@@ -163,7 +204,7 @@ public static String wordExtractor(int startPosition, int endPosition, String in
     {
         switch (command.toLowerCase()) {
             case "":
-                System.out.println("Available commands: help, exit, version, cd, date, echo, clear, dice, rl");
+                System.out.println("Available commands: help, exit, version, cd, date, echo, clear, dice, rl, uptime, flip, calc");
                 System.out.println("Type 'help <command>' to get more information about a specific command.");
                 break;
             case "help":
@@ -191,16 +232,50 @@ public static String wordExtractor(int startPosition, int endPosition, String in
                 System.out.println("The 'clear' command clears the terminal screen.");
                 break;
             case "dice":
-                System.out.println("The 'dice' command rolls a specified number of dice with a specified number of sides.");
+                System.out.println("The 'dice' command rolls a specified number of dice with a specified number of sides or type 0 for random.");
                 System.out.println("Usage: dice [number of dice] [number of sides]");
                 break;
                 case "rl":
                 System.out.println("The 'rl' will run the last run command or you can put a number after rl to run that command.");
                 System.out.println("Usage: rl [number of times to go back]");
+                break;
+                case "uptime":
+                System.out.println("The 'uptime' command displays the time since the terminal was started.");
+                break;
+                case "flip":
+                System.out.println("The 'flip' command flips a coin.");
+                break;
+                case "calc":
+                System.out.println("The 'calc' command is a simple calculator.");
+                System.out.println("Usage: calc [number] [operator] [number] (decimal numbers are not supported)");
+                System.out.println("Operators: +, -, *, /, %");
             default:
                 System.out.println("Unknown command: " + command);
                 break;
         }
     }
 
+    public static int calcNumber(int numOne, int NumTwo, char operator) {
+        int result = 0;
+        switch (operator) {
+            case '+':
+                result = numOne + NumTwo;
+                break;
+            case '-':
+                result = numOne - NumTwo;
+                break;
+            case '*':
+                result = numOne * NumTwo;
+                break;
+            case '/':
+                result = numOne / NumTwo;
+                break;
+            case '%':
+                result = numOne % NumTwo;
+                break;
+            default:
+                return 0;
+        }
+        return result;
+    }
 }
